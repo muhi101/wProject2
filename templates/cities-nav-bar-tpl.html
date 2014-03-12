@@ -1,0 +1,8 @@
+<!-- BEGIN: Underscore Template Definition for cities navigation menu. -->
+<h3>Click on a city ...</h3>
+<ul>
+    <!-- interate through collection and display city name hyperlink  -->
+    <% _.each( cityCollection.listItems, function( listItem ){ %>
+        <li><a href="#" id="<%- listItem.city %>"> <%- listItem.city %> </a></li>
+    <% }); %>
+</ul>

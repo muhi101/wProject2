@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<!-- If time permitted I would have used more styling for the app, perhaps used something like bootcamp  -->
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+
+<script src="lib/require.js" data-main="app"></script>
+
+
+<!-- If time permitted I would have put the templates in separate files and used AMD loader for Underscore templates -->
+<!-- BEGIN: Underscore Template Definition for weather data. -->
+<script type="text/html" id="weather-tpl" >
+	
+	 <p><span class="detailsTitle">City:</span>  <br/><%= cityName %> </p> 
+     <p><span class="detailsTitle">Location</span>: <br/> [lat: <%= cityLat %> ] [lon: <%= cityLon %> ]</p> 
+	 <p><span class="detailsTitle">Weather condition:</span>  <br/><%= cityDescription %> </p> 
+	 <p><img src="<%= cityIcon %>" alt="weather icon graphic" /></p>
+	 <p><span class="detailsTitle">Humidity:</span>  <br/><%= cityHumidity %> </p> 
+	 <p><span class="detailsTitle">Temparate:</span>  <br/><%= cityTemparate %> </p> 
+	 <p><span class="detailsTitle">Min temperature:</span> <br/><%= cityTemp_min %> </p>
+	 <p><span class="detailsTitle">Max temperature:</span>  <br/><%= cityTemp_max %> </p>
+	 <p><span class="detailsTitle">Pressure:</span>  <br/><%= cityPressure %> </p>
+</script>
+
+<!-- BEGIN: Underscore Template Definition for cities navigation menu. -->
+<script type="text/html" id="cities-nav-bar-tpl" >
+	<h3>Click on a city ...</h3>
+	<ul>
+		<!-- interate through collection and display city name hyperlink  -->
+		<% _.each( cityCollection.listItems, function( listItem ){ %>
+			<li><a href="#" id="<%- listItem.city %>"> <%- listItem.city %> </a></li>
+		<% }); %>
+	</ul>
+</script>
+
+<!-- BEGIN: Underscore Template Definition for error message panel. -->
+<script type="text/html" id="error-tpl" >
+	<h3>Error message</h3>
+	<p><%= errorMsg %></p>
+</script>
+
+<title>City Weather</title>
+</head>
+<body>
+<h1>City weather app</h1>
+
+<div id="searchPanelWrapper">
+    <!-- Container for cities hyperlink navigation-->
+    <div id="citiesBox"></div>
+    
+    <div id="formWrapper">
+        <!-- form for user to input city-->
+        <form id=search_form method=post action="#">
+            <label for=searchTextField>...OR enter a UK city:</label> 
+            <br />
+            <input id="searchTextField" size="40" /> 
+        </form>
+    </div>
+    <!-- Container for error panel-->
+    <div id="errorBox"></div>
+</div>
+
+<div id="weatherPanelWrapper">
+    <!-- Container for dynamic weather details-->
+    <div id="weatherHeader"><h3> Weather details!</h3></div>
+    <div id="weatherBox"></div>
+</div>
+</body>
+</html>

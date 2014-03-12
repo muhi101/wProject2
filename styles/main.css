@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:Georgia, "Times New Roman", Times, serif;
+color:#333;
+font-size:12px;	
+}
+h1,h2,h3,h4,h5, label{
+	font-family:Verdana, Geneva, sans-serif;
+	color:#336;
+}
+label,.detailsTitle{
+font-weight:bold;	
+}
+#weatherPanelWrapper{
+	border: 1px dashed blueviolet;
+	width: 300px;
+	padding: 10px;
+	text-align: center;
+	float:left;
+	margin-left: 10px;
+}
+
+#weatherBox{
+	min-height:400px;
+}
+
+#searchPanelWrapper{
+	border: 1px dashed blueviolet;
+	width: 300px;
+	padding: 10px;
+	position: relative;
+	float: left;
+}
+
+#errorBox{
+	color:#F00;	
+}
