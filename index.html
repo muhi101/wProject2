@@ -5,6 +5,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1">
 
 <!-- If time permitted I would have used more styling for the app, perhaps used something like bootcamp  -->
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 <script src="lib/require.js" data-main="app"></script>
@@ -47,7 +48,7 @@
 <body>
 <h1>City weather app</h1>
 
-<div id="searchPanelWrapper">
+<div id="searchPanelWrapper" class="col-md-6">
     <!-- Container for cities hyperlink navigation-->
     <div id="citiesBox"></div>
     
@@ -63,10 +64,11 @@
     <div id="errorBox"></div>
 </div>
 
-<div id="weatherPanelWrapper">
+<div id="weatherPanelWrapper" class="col-md-6">
     <!-- Container for dynamic weather details-->
     <div id="weatherHeader"><h3> Weather details!</h3></div>
     <div id="weatherBox"></div>
 </div>
+
 </body>
 </html>

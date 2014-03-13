@@ -8,7 +8,11 @@ require.config({
   paths: {
     "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min",
     "underscore": "lib/underscore",
-    "async": "lib/async"
+   	"jquery.bootstrap": "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min",
+	 "async": "lib/async"
+  },
+  shim: {
+	'jquery.bootstrap': ['jquery']
   }
 });
 
